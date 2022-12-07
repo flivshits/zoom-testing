@@ -1,10 +1,8 @@
-NOTE: Cannot complete initial login to zoom programatically, with reference => https://devforum.zoom.us/t/programmatic-way-to-login-user/52638/2
-
-Greetings,
+# Zoom Api Testing
 
 In this document we will walk through the setup of this micro API testing framework.
 
-Pre-Requisites:
+## Pre-Requisites:
     1)  Install Node JS v17.4.0 and Node Package Manager 8.3.1
     2)  Go to the Zoom market place (https://marketplace.zoom.us/), and select the Develop (top right) => Create app => OAuth => User-managed app
         and fill in as necessary, making sure to copy:
@@ -26,12 +24,12 @@ Pre-Requisites:
            i) the .env file for "redirect_url"
            ii) Zoom platform => manage => your app => App Credentials in both the "Redirect URL for OAuth" and "Add allow lists"
     
-How it works:
+## How it works:
 The user needs to be prompted to install the app, but only once.  This can be seen as preconditioning of the data, and is a limitation of 
 testing on the Zoom platform - this is security concern for them, as they don't want to have simply anyone accept unkown apps and have to
 deal with unforseen consequences.  Once accepted, this can be run from a browser, postman or any other app capable of sending a get request
 
-setup & usage:
+## Installation & Usage:
     1) In a seperate terminal run "npm install" to install the various node modules required
     2) In the root directory run "npm start"
     3) For sample execution open your browser, and type the following "http://localhost:8080?user_email=<email associated with zoom>
@@ -40,7 +38,10 @@ setup & usage:
        all tests should be independant.  Perhaps at later stage, I will enable additional options to execute in a specific series, but for this
        POC parallel is all there is.
 
-Pending tasks:
+## Pending tasks:
     1) Create a cli component that will allow selection of the specific tests
     2) Additional Tests to be made
     3) A seperate workflow for preconditioning user values
+
+## Note: 
+    Cannot complete initial login to zoom programatically, with reference => https://devforum.zoom.us/t/programmatic-way-to-login-user/52638/2
